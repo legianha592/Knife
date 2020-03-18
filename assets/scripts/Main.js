@@ -9,12 +9,18 @@ cc.Class({
         round: cc.Node,
         destination: cc.Node,
         knife_2: cc.Node,
-        number_knife: 10,
+        lbl_stage: cc.Label,
+        lbl_point: cc.Label,
+        lbl_apple: cc.Label,
+        number_knife: 6,
+        previous_number_knife: 6,
+        stage: 1,
+        point: 0,
+        apple: 0,
         time: 0,
-        speed: 60, //toc do quay cua vong tron
+        speed: 30, //toc do quay cua vong tron
         distance_to_round: 90, //khoang cach tu dao den vong tron
         flying_time: 0.1, //thoi gian dao bay tu vi tri xuat phat den vong tron
-        current_knife: 0,
     },
 
     calculateMinDistance(){
@@ -38,6 +44,9 @@ cc.Class({
     },
 
     addLife(){
+        this.list_life = [];
+        this.number_knife = this.previous_number_knife + 1;
+        this.previous_number_knife++;
         var pos_x = -220;
         var pos_y = -220;
         for (var i=0; i<this.number_knife; i++){
@@ -53,6 +62,17 @@ cc.Class({
     remainLife(){
         this.number_knife--;
         this.list_life[this.number_knife].color = new cc.color(0, 0, 0);
+        if (this.number_knife === 0){
+            // hieu ung hinh anh +1 dao cuoi va hien popup de xac nhan qua ban
+            setTimeout(this.setupNewStage.bind(this), 300);
+        }
+        this.updatePoint();
+        cc.log(this.number_knife)
+    },
+
+    updatePoint(){
+        this.point++;
+        this.lbl_point.string = String(this.point);
     },
 
     addDestination(){
@@ -85,16 +105,16 @@ cc.Class({
             //tiep tuc setup 1 con dao khac
             this.knife_2.runAction(cc.sequence(cc.moveBy(0.1, 0, 90), cc.fadeOut(0.01), cc.moveBy(0.01, 0, -90), cc.fadeIn(0.01)));
             this.list_point.push(point);
-            this.remainLife();
-            this.addKnife(this.tag)
+            this.addKnife()
+            this.remainLife()
         }
         cc.log("list point = ", this.list_point)
     },
 
-    addKnife(tag){
+    addKnife(){
         //add dao phi
         this.knife = cc.instantiate(this.knifePrefab).getComponent("knife");
-        this.knife.init(tag, () => {
+        this.knife.init(() => {
             var callFunction = function(){
                 //var point = node.convertToNodeSpaceAR (cc.v2(x, y)) => chuyen he quy chieu tu x, y tren mat phang toa do (goc duoi trai) sang he quy chieu node, tra ve 1 object(point)
                 var point = this.destination.convertToNodeSpaceAR(cc.v2(480+this.round.x, 320+this.round.y-this.round.height/2))
@@ -111,15 +131,27 @@ cc.Class({
         });
         this.knife.node.y = -this.distance_to_round-this.round.height/2;
         this.node.addChild(this.knife.node);    
-        this.tag++;
+    },
+
+    setupNewStage(){
+        this.stage++;
+        this.speed += 30;
+        this.lbl_stage.string = "Stage "+this.stage;
+        this.list_point = [];
+        this.addKnife();
+        this.addLife();
+        this.calculateMinDistance();
+        this.destination.removeAllChildren();
     },
 
     start () {
-        this.list_point = [];
-        this.list_life = [];
-        this.addKnife(this.tag);
-        this.addLife();
-        this.calculateMinDistance();
+        this.stage = 0;
+        this.apple = 0;
+        this.point = 0;
+        this.lbl_stage.string = "Stage "+this.stage;
+        this.lbl_apple.string = String(this.apple);
+        this.lbl_point.string = String(this.point);
+        this.setupNewStage()
     },
 
 });

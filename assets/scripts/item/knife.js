@@ -28,9 +28,7 @@ cc.Class({
         this._isMove = true;
     },
 
-    init(tag, callback){
-        this.tag = tag;
-        this.node.getComponent(cc.BoxCollider).tag = this.tag;
+    init(callback){
         this.callback = callback;
     },
 
