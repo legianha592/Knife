@@ -12,6 +12,7 @@ cc.Class({
         lbl_stage: cc.Label,
         lbl_point: cc.Label,
         lbl_apple: cc.Label,
+        currentBest: 0,
         number_knife: 6,
         previous_number_knife: 6,
         stage: 1,
@@ -44,17 +45,18 @@ cc.Class({
     },
 
     addLife(){
+        this.listKnife.removeAllChildren()
         this.list_life = [];
         this.number_knife = this.previous_number_knife + 1;
         this.previous_number_knife++;
-        var pos_x = -220;
-        var pos_y = -220;
+        var pos_x = 0;
+        var pos_y = 0;
         for (var i=0; i<this.number_knife; i++){
             var item = cc.instantiate(this.itemKnife);
             item.x = pos_x;
             item.y = pos_y+25*i;
 
-            this.node.addChild(item);
+            this.listKnife.addChild(item);
             this.list_life.push(item);
         }
     },
@@ -100,6 +102,15 @@ cc.Class({
                 cc.moveBy(0.01, -120, 0),
                 cc.fadeIn(0.01)
             ));
+            if (this.currentBest<this.point){
+                this.currentBest = this.point;
+                this.newBest = true;
+            }
+            else{
+                this.newBest = false;
+            }
+            cc.log("point and stage = ", this.currentBest, this.point, this.stage)
+            setTimeout(this.openPopupEndGame.bind(this), 500);
         }
         else{
             //tiep tuc setup 1 con dao khac
@@ -109,6 +120,16 @@ cc.Class({
             this.remainLife()
         }
         cc.log("list point = ", this.list_point)
+    },
+
+    openPopupEndGame(){
+        var self = this;
+        Common.showPopup('popupEndGame', function(popup){
+            popup.appear();
+            popup.init(self.point, self.stage, self.newBest, function(){
+                self.start();
+            });
+        })
     },
 
     addKnife(){
@@ -145,6 +166,9 @@ cc.Class({
     },
 
     start () {
+        this.speed = 30;
+        this.previous_number_knife = 6;
+        this.knife = 6;
         this.stage = 0;
         this.apple = 0;
         this.point = 0;
