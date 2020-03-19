@@ -1167,6 +1167,7 @@
     "lbl_apple": {
       "__id__": 20
     },
+    "currentBest": 0,
     "number_knife": 6,
     "previous_number_knife": 6,
     "stage": 1,
