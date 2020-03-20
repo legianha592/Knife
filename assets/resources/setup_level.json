@@ -1,0 +1,364 @@
+{
+    "concept":
+    [
+        {
+            "level": 1,
+            "backward": false,
+            "speed_forward": 30,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 30,
+            "number_knife": 6,
+            "number_fruit": 0,
+            "exist_knife": 0
+        },
+
+        {
+            "level": 2,
+            "backward": false,
+            "speed_forward": 50,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 30,
+            "number_knife": 6,
+            "number_fruit": 0,
+            "exist_knife": 0
+        }, 
+
+        {
+            "level": 3,
+            "backward": false,
+            "speed_forward": 70,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 30,
+            "number_knife": 6,
+            "number_fruit": 0,
+            "exist_knife": 0
+        }, 
+
+        {
+            "level": 4,
+            "backward": false,
+            "speed_forward": 70,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 30,
+            "number_knife": 7,
+            "number_fruit": 0,
+            "exist_knife": 0
+        }, 
+
+        {
+            "level": 5,
+            "backward": true,
+            "speed_forward": 70,
+            "speed_backward": -70,
+            "time_loop": 5,
+            "total_time": 30,
+            "number_knife": 7,
+            "number_fruit": 4,
+            "exist_knife": 1
+        }, 
+
+        {
+            "level": 6,
+            "backward": false,
+            "speed_forward": 90,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 40,
+            "number_knife": 7,
+            "number_fruit": 0,
+            "exist_knife": 0
+        },
+
+        {
+            "level": 7,
+            "backward": false,
+            "speed_forward": 110,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 40,
+            "number_knife": 7,
+            "number_fruit": 0,
+            "exist_knife": 0
+        }, 
+
+        {
+            "level": 8,
+            "backward": false,
+            "speed_forward": 110,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 40,
+            "number_knife": 8,
+            "number_fruit": 0,
+            "exist_knife": 0
+        }, 
+
+        {
+            "level": 9,
+            "backward": false,
+            "speed_forward": 130,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 40,
+            "number_knife": 9,
+            "number_fruit": 0,
+            "exist_knife": 0
+        }, 
+
+        {
+            "level": 10,
+            "backward": true,
+            "speed_forward": 130,
+            "speed_backward": -130,
+            "time_loop": 5,
+            "total_time": 40,
+            "number_knife": 9,
+            "number_fruit": 4,
+            "exist_knife": 1
+        }, 
+
+        {
+            "level": 11,
+            "backward": false,
+            "speed_forward": 150,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 50,
+            "number_knife": 10,
+            "number_fruit": 0,
+            "exist_knife": 0
+        },
+
+        {
+            "level": 12,
+            "backward": false,
+            "speed_forward": 150,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 50,
+            "number_knife": 11,
+            "number_fruit": 0,
+            "exist_knife": 1
+        }, 
+
+        {
+            "level": 13,
+            "backward": false,
+            "speed_forward": 150,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 50,
+            "number_knife": 12,
+            "number_fruit": 0,
+            "exist_knife": 2
+        }, 
+
+        {
+            "level": 14,
+            "backward": false,
+            "speed_forward": 150,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 50,
+            "number_knife": 12,
+            "number_fruit": 0,
+            "exist_knife": 3
+        }, 
+
+        {
+            "level": 15,
+            "backward": true,
+            "speed_forward": 170,
+            "speed_backward": -170,
+            "time_loop": 4,
+            "total_time": 50,
+            "number_knife": 12,
+            "number_fruit": 4,
+            "exist_knife": 4
+        }, 
+
+        {
+            "level": 16,
+            "backward": false,
+            "speed_forward": 190,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 60,
+            "number_knife": 12,
+            "number_fruit": 0,
+            "exist_knife": 3
+        },
+
+        {
+            "level": 17,
+            "backward": false,
+            "speed_forward": 210,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 60,
+            "number_knife": 13,
+            "number_fruit": 0,
+            "exist_knife": 0
+        }, 
+
+        {
+            "level": 18,
+            "backward": false,
+            "speed_forward": 210,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 60,
+            "number_knife": 13,
+            "number_fruit": 0,
+            "exist_knife": 1
+        }, 
+
+        {
+            "level": 19,
+            "backward": false,
+            "speed_forward": 210,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 60,
+            "number_knife": 14,
+            "number_fruit": 0,
+            "exist_knife": 0
+        }, 
+
+        {
+            "level": 20,
+            "backward": true,
+            "speed_forward": 210,
+            "speed_backward": -210,
+            "time_loop": 4,
+            "total_time": 60,
+            "number_knife": 14,
+            "number_fruit": 4,
+            "exist_knife": 2
+        }, 
+
+        {
+            "level": 21,
+            "backward": false,
+            "speed_forward": 230,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 75,
+            "number_knife": 15,
+            "number_fruit": 0,
+            "exist_knife": 0
+        },
+
+        {
+            "level": 22,
+            "backward": false,
+            "speed_forward": 240,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 75,
+            "number_knife": 15,
+            "number_fruit": 0,
+            "exist_knife": 0
+        }, 
+
+        {
+            "level": 23,
+            "backward": false,
+            "speed_forward": 240,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 75,
+            "number_knife": 15,
+            "number_fruit": 0,
+            "exist_knife": 2
+        }, 
+
+        {
+            "level": 24,
+            "backward": false,
+            "speed_forward": 260,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 75,
+            "number_knife": 16,
+            "number_fruit": 0,
+            "exist_knife": 0
+        }, 
+
+        {
+            "level": 25,
+            "backward": true,
+            "speed_forward": 260,
+            "speed_backward": -260,
+            "time_loop": 3,
+            "total_time": 75,
+            "number_knife": 16,
+            "number_fruit": 4,
+            "exist_knife": 1
+        }, 
+
+        {
+            "level": 26,
+            "backward": false,
+            "speed_forward": 280,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 75,
+            "number_knife": 16,
+            "number_fruit": 0,
+            "exist_knife": 2
+        },
+
+        {
+            "level": 27,
+            "backward": false,
+            "speed_forward": 280,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 75,
+            "number_knife": 16,
+            "number_fruit": 0,
+            "exist_knife": 4
+        }, 
+
+        {
+            "level": 28,
+            "backward": false,
+            "speed_forward": 300,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 75,
+            "number_knife": 17,
+            "number_fruit": 0,
+            "exist_knife": 2
+        }, 
+
+        {
+            "level": 29,
+            "backward": false,
+            "speed_forward": 300,
+            "speed_backward": 0,
+            "time_loop": 0,
+            "total_time": 75,
+            "number_knife": 18,
+            "number_fruit": 0,
+            "exist_knife": 0
+        }, 
+
+        {
+            "level": 30,
+            "backward": true,
+            "speed_forward": 300,
+            "speed_backward": -300,
+            "time_loop": 3,
+            "total_time": 40,
+            "number_knife": 18,
+            "number_fruit": 4,
+            "exist_knife": 2
+        }
+    ]
+}
