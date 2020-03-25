@@ -25,10 +25,13 @@
       },
       {
         "__id__": 3
+      },
+      {
+        "__id__": 4
       }
     ],
     "_prefab": {
-      "__id__": 4
+      "__id__": 5
     },
     "_opacity": 255,
     "_color": {
@@ -40,8 +43,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 282,
-      "height": 282
+      "width": 430,
+      "height": 430
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -120,6 +123,23 @@
     "itemAtlas": {
       "__uuid__": "0779a630-6c3a-4775-b9c5-da533e531ff6"
     },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CircleCollider",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "tag": 0,
+    "_offset": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_radius": 161.6,
     "_id": ""
   },
   {
