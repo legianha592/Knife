@@ -6,7 +6,7 @@ cc.Class({
     properties: {
         point: cc.Label,
         stage: cc.Label,
-        newBest: cc.Node,
+        // newBest: cc.Node,
         restart: cc.Node,
     },
 
@@ -16,12 +16,12 @@ cc.Class({
         cc.log("point and stage = ", point, stage)
         this.point.string = point;
         this.stage.string = "STAGE "+ stage;
-        if (boolean === true){
-            this.newBest.active = true;
-        }
-        else{
-            this.newBest.active = false;
-        }
+        // if (boolean === true){
+        //     this.newBest.active = true;
+        // }
+        // else{
+        //     this.newBest.active = false;
+        // }
     },
 
     onClickRestart(){

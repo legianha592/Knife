@@ -14,6 +14,12 @@ cc.Class({
         this.item.spriteFrame = this.itemAtlas.getSpriteFrame(name)
     },
 
+    onEnable(){
+        cc.log("inside trunk enable")
+        cc.director.getCollisionManager().enabled = true;
+        cc.director.getCollisionManager().enabledDebugDraw = true;
+    },
+
     start () {
 
     },
