@@ -17,6 +17,7 @@ cc.Class({
         lbl_point: cc.Label,
         lbl_apple: cc.Label,
         _isForward: true,
+        _isLastKnife: false,
         _isCollision: false,
         _continueCounting: true,
         point: 0,
@@ -67,7 +68,7 @@ cc.Class({
         }
         this.trunk_position.angle = this.speed_backward*this.total_time_backward + this.speed_forward*this.total_time_forward;
         this.destination.angle = this.speed_backward*this.total_time_backward + this.speed_forward*this.total_time_forward;
-        // cc.log("time = ", this.run_time, this.speed_forward)
+        // cc.log("time = ", this._isForward, this.total_time_forward, this.total_time_backward)
     },
 
     moveKnife(){
@@ -96,9 +97,11 @@ cc.Class({
         if (this.number_knife === 0){
             // hieu ung hinh anh +1 dao cuoi va hien popup de xac nhan qua ban
 
+
             this.updatePoint();
             this.openPopupEndGame(this.index);
             this.index++
+
         }
         cc.log("number life = ", this.number_knife)
     },
@@ -135,7 +138,7 @@ cc.Class({
             }
             angle = total_time_forward*this.speed_forward + total_time_backward*this.speed_backward;
         }
-        cc.log("future = ", this.total_time_backward+this.total_time_forward+this.flying_time, total_time_forward, total_time_backward)
+ 
         return angle;
     },
 
@@ -236,6 +239,9 @@ cc.Class({
                 this.list_point.push(point);
     
                 this.remainLife();
+                if (this.number_knife == 0){
+                    this._isLastKnife = true;
+                }
                 if (this.number_knife>0){
                     this.addKnife();
                 }
@@ -243,8 +249,11 @@ cc.Class({
             }
             else{
                 // var point = this.node.convertToWorldSpaceAR(cc.v2(this.knife.node.x-750/2, this.knife.node.y-1334/2));
-                this._isCollision = true;
-                this.knife.node.destroy()
+                if (this._isLastKnife == false){
+                    this._isCollision = true;
+                    this.knife.node.destroy();
+                    this.destination.opacity = 0;
+                }
             }
         })
         this.knife_position.addChild(this.knife.node);
@@ -333,6 +342,7 @@ cc.Class({
         this.number_fruit = this.list_character.concept[this.index].number_fruit;
         this.exist_knife = this.list_character.concept[this.index].exist_knife;
 
+
         this.list_point = [];
         this.count_time_loop = -1;
         this.total_time_forward = 0;
@@ -346,6 +356,9 @@ cc.Class({
         setTimeout(this.addKnife.bind(this), 100)
 
         this.setupBackward();
+        this._isForward = true;
+        this._isLastKnife = false;
+        this.destination.opacity = 255
         cc.log("setup new stage = ", this.list_point)
     },
 
